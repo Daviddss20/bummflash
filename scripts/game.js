@@ -17,6 +17,9 @@ const walkSounds = {
 }
 let audioGame = new Audio('./assets/audio/game.mp3')
 audioGame.loop = true
+audioGame.preload = 'auto'
+let winAudio = new Audio('./assets/audio/win.mp3')
+winAudio.preload = 'auto'
 
 // document.addEventListener('visibilitychange', function() {
 //     if (document.visibilityState === 'hidden') {
@@ -216,7 +219,7 @@ function endGame() {
     currentMap = 0
     dangerLocation = {}
     stopTimer()
-    playAudio('./assets/audio/win.mp3')
+    winAudio.play()
 
     let size = 10
     const targetSize = canvas.width / 1.618 // Golden number
