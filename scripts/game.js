@@ -15,11 +15,16 @@ const walkSounds = {
     'walk03': './assets/audio/walk03.ogg',
     'walk04': './assets/audio/walk04.ogg'
 }
+
 let audioGame = new Audio('./assets/audio/game.mp3')
 audioGame.loop = true
 audioGame.preload = 'auto'
+
 let winAudio = new Audio('./assets/audio/win.mp3')
 winAudio.preload = 'auto'
+
+let gameOverAudio = new Audio('./assets/audio/game-over.mp3')
+audioGame.preload = 'auto'
 
 // document.addEventListener('visibilitychange', function() {
 //     if (document.visibilityState === 'hidden') {
@@ -219,7 +224,6 @@ function endGame() {
     currentMap = 0
     dangerLocation = {}
     stopTimer()
-    winAudio.play()
 
     let size = 10
     const targetSize = canvas.width / 1.618 // Golden number
@@ -287,7 +291,10 @@ function compareScore() {
         (recordScore[0] > currentScore[0] ||
         (recordScore[0] === currentScore[0] && recordScore[1] > currentScore[1]))
     ) {
+        winAudio.play()
         player.recordScore = [...player.currentScore]
+    } else {
+        gameOverAudio.play()
     }
     printRecord()
 }

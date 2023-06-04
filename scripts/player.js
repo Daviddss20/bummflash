@@ -1,16 +1,16 @@
-let player;
+let player
 
 try {
-    player = JSON.parse(localStorage.getItem('player'));
+    player = JSON.parse(localStorage.getItem('player'))
 } catch (error) {
     player = null
 }
 
 if (player === null) {
-    let defaultPlayer = {
+    player = {
     userName: 'Player',
     recordScore: [],
     currentScore: []
-    };
-    localStorage.setItem('player', JSON.stringify(defaultPlayer));
+    }
+    localStorage.setItem('player', JSON.stringify(player))
 }
