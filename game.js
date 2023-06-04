@@ -34,6 +34,7 @@ const btnDown = document.querySelector('#down')
 let gameStarted = false
 let canvasSize
 let elementsSize
+
 const ECoor = { // Element coordenates
     x: undefined,
     y: undefined,
@@ -183,11 +184,6 @@ function findPrize() {
         playAudio('./assets/audio/levelUp.mp3')
         renderGame()
     } else if (playerLocation.x === prizeLocation.x && playerLocation.y === prizeLocation.y) {
-        currentMap = 0
-        gameStarted = false
-        dangerLocation = {}
-        playAudio('./assets/audio/win.mp3')
-        stopTimer()
         endGame()
         localStorage.setItem('player', JSON.stringify(player))
     }
@@ -214,8 +210,12 @@ function meltedHeart() {
 }
 
 function endGame() {
+    gameStarted = false
     audioGame.pause()
     audioGame.currentTime = 0
+    currentMap = 0
+    dangerLocation = {}
+    stopTimer()
     playAudio('./assets/audio/win.mp3')
 
     let size = 10
