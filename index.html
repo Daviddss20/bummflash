@@ -4,45 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bumflash</title>
+    <title>Bummflash</title>
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="game-container">
-        <h1>Bummflash</h1>
-        <canvas id="game-canvas"></canvas>
-
-        <div class="buttons">
-            <button id="up">Up</button>
-            <button id="left">Left</button>
-            <button id="right">Right</button>
-            <button id="down">Down</button>
-        </div>
-
-        <div class="time-start-wrapper">
-            <div class="messages">
-                <p class="lifes"><span id="timer">⏱️</span></p>
+    <div class="main">
+        <header>
+            <h1>Bummflash</h1>
+        </header>
+    
+        <main>
+            <section class="maps-wrapper">
+            </section>
+            <div class="new-map">
+                <span>Create a Map</span>
             </div>
-            <button id="start-button">Start</button>
-        </div>
-        
-
-        <div class="messages">
-            <p class="recordScore">⭐ <span id="recordScore">--:--</span></p>
-        </div>
-
-        
+        </main>
     </div>
-    <script src="./scripts/player.js" defer></script>
-    <script src="./scripts/maps.js" defer></script>
-    <script src="./scripts/game.js" defer></script>
+    <script src="./scripts/main.mjs" type="module" defer></script>
 </body>
 </html>

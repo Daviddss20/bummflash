@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bummflash</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main">
+        <h1 class="title">Bummflash</h1>
+
+        <div class="recordScore-wrapper messages">
+            <p>⭐ <span id="recordScore">--:--</span></p>
+        </div>
+
+        <canvas id="game-canvas"></canvas>
+
+        <div class="time-wrapper messages">
+            <span class="time">⏱️</span>
+        </div>
+
+        <div class="buttons-wrapper">
+            <div>
+                <button id="up">O</button>
+            </div>
+            <div>
+                <button id="left">O</button>
+                <button id="right">O</button>
+            </div>
+            <div>
+                <button id="down">O</button>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/player.mjs" type="module" defer></script>
+    <script src="./scripts/game.mjs" type="module" defer></script>
+</body>
+</html>
